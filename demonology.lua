@@ -1,13 +1,3 @@
---[[
-    BloxWare - Demonology (V3)
-    Developed for Nathan Lorenzo
-    
-    Fixes:
-    - Fixed Rayfield Slider Syntax error (using Range = {16, 100} instead of Min/Max) to stop the UI from crashing/freezing on "Waiting..."
-    - Added Live Ghost Solver (auto-detects spawned evidences in workspace and crosses them out to solve the EXACT Ghost Type)
-    - Full Ghost ESP and Overhead Billboard tags showing Ghost skin and distance.
---]]
-
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
@@ -763,9 +753,9 @@ local function LoadRayfield()
     _G.Rayfield = Rayfield
     
     local Window = Rayfield:CreateWindow({
-        Name = "BloxWare - Demonology Premium 👻",
+        Name = "BloxWare - Demonology 👻",
         LoadingTitle = "BloxWare Premium",
-        LoadingSubtitle = "by Nathan Lorenzo",
+        LoadingSubtitle = "Made by Floss!",
         ConfigurationSaving = { Enabled = false },
         Discord = { Enabled = false },
         KeySystem = false
@@ -789,7 +779,7 @@ local function LoadRayfield()
         Callback = function()
             local Ghost = FindActiveGhost()
             if Ghost then
-                print("======== BLOXWARE GHOST ATTRIBUTES ========")
+                print("BLOXWARE GHOST ATTRIBUTES")
                 for k, v in pairs(Ghost:GetAttributes()) do
                     print(tostring(k) .. ": " .. tostring(v))
                 end
@@ -973,9 +963,9 @@ local function LoadRayfield()
                 
                 local state = "Idle / Roaming"
                 if Ghost:GetAttribute("Hunting") then
-                    state = "⚠️ HUNTING! ⚠️"
+                    state = "HUNTING!"
                 elseif Ghost:GetAttribute("EventActive") then
-                    state = "⭐ ACTIVE EVENT ⭐"
+                    state = "ACTIVE EVENT"
                 end
                 BehaviorLabel:Set("Current Behavior: " .. state)
             else
